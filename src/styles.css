@@ -1,0 +1,102 @@
+.dark-one {
+    background-color: #121212;
+}
+
+.dark-two {
+    background-color: #181818;
+}
+
+.dark-three {
+    background-color: #1d1d1d;
+}
+
+.dark-four {
+    background-color: #242424;
+}
+
+.dark-five {
+    background-color: #2b2b2b;
+}
+
+.chat-container {
+    padding: 0.45rem 0.85rem;
+}
+
+.chat-box {
+    scroll-behavior: smooth;
+    width: 320px;
+    height: 400px;
+}
+
+.chat-box-header {
+    font-size: 1.2rem;
+}
+
+.chat-box-body {
+    overflow-y: scroll;
+    height: 320px;
+    max-height: 320px;
+}
+
+.chat-box-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.chat-box-footer>input[type="text"] {
+    border: solid 1px #a71d2a;
+    color: #e2e2e4;
+    flex: 0 0 70%;
+    padding: 0.35rem 0.75em;
+}
+
+.chat-box-footer>input[type="text"]:focus {
+    outline: none;
+}
+
+.chat-box-footer>button {
+    flex: 0 0 15%;
+    font-size: 14px;
+}
+
+.message .message-badge {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 12px;
+    padding: 0.06rem 0.45em;
+}
+
+.message .message-text>p {
+    display: inline-block;
+    font-size: 14.5px;
+}
+
+/* Animaciones */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}

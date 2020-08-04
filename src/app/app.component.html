@@ -1,0 +1,34 @@
+<div class="app">
+    <nav class="navbar navbar-expand-sm navbar-dark dark-four">
+        <div class="container-xl">
+            <a class="navbar-brand text-danger mr-4" href="/">
+                Fire chat
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto" style="margin-top: 2px;">
+                    <li class="nav-item">
+                        <a [routerLink]="['/home']" routerLinkActive="active" class="nav-link">
+                            Inicio
+                        </a>
+                    </li>
+                    <li *ngIf="isLogged" class="nav-item">
+                        <a [routerLink]="['/chat']" routerLinkActive="active" class="nav-link">
+                            Chat
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div *ngIf="statusLoaded" class="form-inline animated fast fadeIn">
+                <button *ngIf="!isLogged" [routerLink]="['/login']" class="btn btn-danger">
+                    Iniciar sesión
+                </button>
+                <button *ngIf="isLogged" (click)="logout()" class="btn btn-outline-danger">
+                    Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="container-xl text-light py-5">
+        <router-outlet></router-outlet>
+    </div>
+</div>

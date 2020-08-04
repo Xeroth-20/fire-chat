@@ -1,0 +1,26 @@
+<div class="chat animated fast fadeIn">
+    <div class="chat-box">
+        <div class="chat-box-header chat-container dark-three text-danger">
+            Chat
+        </div>
+        <div class="chat-box-body chat-container dark-two">
+            <div *ngFor="let cm of cms" [class.text-right]="cm.uid == user.uid" class="message">
+                <span [class]="{ 'bg-danger': cm.uid != user.uid, 'dark-four': cm.uid == user.uid }"
+                    class="message-badge">
+                    {{ cm.username }}
+                </span>
+                <div class="message-text">
+                    <p [class]="{ 'bg-danger': cm.uid == user.uid, 'dark-four': cm.uid != user.uid }"
+                        class="bg-danger px-3 py-1">
+                        {{ cm.message }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="chat-box-footer chat-container dark-three">
+            <input #messageCtrl (keydown.enter)="sendChatMessage(messageCtrl)" class="dark-four" type="text"
+                placeholder="Escribe un mensaje">
+            <button (click)="sendChatMessage(messageCtrl)" class="btn btn-danger">Send</button>
+        </div>
+    </div>
+</div>
